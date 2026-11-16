@@ -10,6 +10,9 @@ jobs:
       - name: Unzip project
         run: unzip -q Yline.zip
 
+      - name: Fix minSdk
+        run: sed -i 's/minSdk 21/minSdk 23/' Yline/app/build.gradle
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
